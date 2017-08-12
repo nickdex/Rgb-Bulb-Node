@@ -5,6 +5,14 @@
     subscribe_key: config.sub_key
   }
 
+  $('#ledRed, #ledGreen, #ledBlue').slider({
+    orientation: 'horizontal',
+    range: 'min',
+    max: 10,
+    step: 1,
+    value: 0
+  })
+
   var pubnub = PUBNUB(settings)
 
   var door = document.getElementById('door')
