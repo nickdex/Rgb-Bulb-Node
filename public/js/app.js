@@ -1,8 +1,8 @@
 (function () {
   var settings = {
     channel: 'pi-house',
-    publish_key: 'pub-c-a7a7bf57-7428-4acf-9feb-95aa76439442',
-    subscribe_key: 'sub-c-28e8300e-7e94-11e7-a179-1e66dc778462'
+    publish_key: config.pub_key,
+    subscribe_key: config.sub_key
   }
 
   var pubnub = PUBNUB(settings)
