@@ -41,8 +41,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<section class="preference">
 				<div>
 					<div class="caption">Front Door</div>
-					<label for="door">
-						<input id="door" type="checkbox">
+					<label for="on_off_button">
+						<input id="on_off_button" type="checkbox">
 						<div class="toggle-button">
 							<div class="switch"></div>
 						</div>
@@ -51,24 +51,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 				<div>
 					<div class="caption">Red Color</div>
-					<label for="led_red" class="brightness fa">
-						<!-- <input id="ledRed" type="range" min="0" max="10" step="1" value="0"> -->
-						<div id="ledRed"></div>
+					<label for="slider_red" class="brightness fa">
+						<div id="slider_red"></div>
 					</label>
 				</div>
 
 				<div>
 					<div class="caption">Green Color</div>
-					<label for="led_green" class="brightness fa">
-						<div id="ledGreen"></div>
+					<label for="slider_green" class="brightness fa">
+						<div id="slider_green"></div>
 					</label>
 				</div>
 
 				<div>
 				<!-- flickering light -->
 					<div class="caption">Blue Color</div>
-					<label for="led_blue" class="brightness fa">
-						<div id="ledBlue"></div>
+					<label for="slider_blue" class="brightness fa">
+						<div id="slider_blue"></div>
 					</label>
 				</div>
 
@@ -81,11 +80,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<footer>
 
 	</footer>
-
-	<script src="http://cdn.pubnub.com/pubnub-3.7.11.min.js"></script>
-	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-	<script type="text/javascript" src="config.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+	<script
+  src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+  integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+  crossorigin="anonymous"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

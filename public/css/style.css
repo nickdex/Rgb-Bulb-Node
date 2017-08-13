@@ -283,34 +283,34 @@ label.fire::after {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
-#ledRed .ui-slider-range {
+#slider_red .ui-slider-range {
   background: #F00000;  /* fallback for old browsers */
   background: -webkit-linear-gradient(top, #DC281E, #F00000);
   background: linear-gradient(to top, #DC281E, #F00000);
 }
-#ledRed .ui-slider-handle {
+#slider_red .ui-slider-handle {
   background: #F00000;  /* fallback for old browsers */
   background: -webkit-linear-gradient(top, #DC281E, #F00000);
   background: linear-gradient(to top, #DC281E, #F00000);
 }
 
-#ledGreen .ui-slider-range {
+#slider_green .ui-slider-range {
   background: #00F000;  /* fallback for old browsers */
   background: -webkit-linear-gradient(top, #1EDD28, #00F000);
   background: linear-gradient(to top, #1EDD28, #00F000);
 }
-#ledGreen .ui-slider-handle {
+#slider_green .ui-slider-handle {
   background: #00F000;
   background: -webkit-linear-gradient(top, #1EDD28, #00F000);
 	background: linear-gradient(to top, #1EDD28, #00F000);
 }
 
-#ledBlue .ui-slider-range {
+#slider_blue .ui-slider-range {
   background: #0000F0;
   background: -webkit-linear-gradient(bottom, #1E21DC, #0000F0);
   background: linear-gradient(to bottom, #1E21DC, #0000F0);
 }
-#ledBlue .ui-slider-handle {
+#slider_blue .ui-slider-handle {
   background: #0000F0;
   background: -webkit-linear-gradient(bottom, #1E21DC, #0000F0);
   background: linear-gradient(to bottom, #1E21DC, #0000F0);
