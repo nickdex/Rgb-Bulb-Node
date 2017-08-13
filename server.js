@@ -31,14 +31,28 @@ function publishUpdate (data) {
 
 app.get('/led/:color/:value', function (req, res) {
   var ledColor = req.params.color
-  var ledValue = req.params.value
-  console.log('ledColor = ' + ledValue)
+  if (!ledColor === 'hex') {
+    var ledValue = req.params.value
+    console.log('ledColor = ' + ledValue)
 
-  if (!isNaN(parseInt(ledValue)) && leds.hasOwnProperty(ledColor)) {
-    publishUpdate({item: leds[ledColor], brightness: ledValue})
-    res.send('ok')
+    if (!isNaN(parseInt(ledValue)) && leds.hasOwnProperty(ledColor)) {
+      publishUpdate({item: leds[ledColor], brightness: ledValue})
+      res.send('ok')
+    } else {
+      res.status(400).send('error')
+    }
   } else {
-    res.status(400).send('error')
+    var hexValue = req.params.value
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexValue)
+    var rgb = result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null
+    /* rgb contains brightness values for each color */
+    publishUpdate({item: 'rgb', 'rgb': rgb})
+
+    res.send('ok')
   }
 })
 
