@@ -19,7 +19,6 @@ function sendHex () {
   var green = $j('#slider_green').slider('value')
   var blue = $j('#slider_blue').slider('value')
   var hex = hexFromRGB(red, green, blue)
-  console.log(hex)
   $j.get('/led/hex/' + hex, function () {})
 }
 
@@ -30,6 +29,7 @@ function sendHex () {
     max: 10,
     step: 1,
     value: 0,
+    animate: true,
     change: sendHex
   })
 

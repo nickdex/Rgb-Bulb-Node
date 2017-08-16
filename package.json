@@ -1,12 +1,12 @@
 {
-  "name": "simple-server",
+  "name": "RGB led server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A server which forwards RGB values to Raspberry Pi",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Nikhil Warke",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4",

@@ -234,13 +234,6 @@ label.brightness::after {
 	top: 17px;
 	color: #C9B559;
 }
-label.fire::before {
-	content: "\f06d";
-}
-label.fire::after {
-	content: "\f06d";
-	color: #D34138;
-}
 .text {
 	font-size: 0.9rem;
 	line-height: 1.2em;
