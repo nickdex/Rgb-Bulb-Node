@@ -14,7 +14,7 @@
 .pmd-range-slider.noUi-background { transition:all ease-in-out 0.2s; -moz-transition:all ease-in-out 0.1s;-webkit-transition:all ease-in-out 0.2s; -o-transition:all ease-in-out 0.2s;  }
 .pmd-range-slider .noUi-handle { width:14px; height:14px; left: -7px; top: -6px; cursor:pointer;}
 .pmd-range-slider .noUi-handle:after,
-.pmd-range-slider .noUi-handle:before { display:none;} 
+.pmd-range-slider .noUi-handle:before { display:none;}
 .pmd-range-slider .noUi-handle:before { display:block; width:100%; height:100%; background:#0f9d58; position:absolute; left:0; top:0; border-radius:50%;}
 .pmd-range-slider .noUi-base { z-index:100;}
 
