@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const pi = require('./led/pi.js')
 const app = express()
 const publicPath = path.join(__dirname, 'public')
+const config = require('./config.js')
 
 // Serve public content - basically any file in the public folder will be available on the server.
 app.use(express.static(publicPath))
@@ -39,15 +40,15 @@ app.get('/button/:value', function (req, res) {
   res.send(response)
 })
 
-// viewed at http://localhost:8080
+// viewed at http://localhost:8080 for development
 app.get('/', function (req, res) {
   res.sendFile(path.join(publicPath, '/index.html'))
 })
 
-app.listen(8080, (err) => {
+app.listen(config.port, (err) => {
   if (err) {
     return console.log('something bad happened', err)
   }
 
-  console.log(`server is listening on port 8080`)
+  console.log('server is listening on port ' + config.port)
 })
