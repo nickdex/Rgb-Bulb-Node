@@ -1,6 +1,6 @@
 {
   "name": "RGB-led-server",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A server which forwards RGB values to Raspberry Pi",
   "main": "server.js",
   "scripts": {
