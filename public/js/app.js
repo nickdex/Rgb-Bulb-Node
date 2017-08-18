@@ -1,40 +1,66 @@
-var $j = $.noConflict()
-
-function hexFromRGB (r, g, b) {
-  var hex = [
-    r.toString(16),
-    g.toString(16),
-    b.toString(16)
-  ]
-  $j.each(hex, function (nr, val) {
-    if (val.length === 1) {
-      hex[ nr ] = '0' + val
-    }
-  })
-  return hex.join('').toUpperCase()
+function mouseOverColor (hex) {
+  document.getElementById('divpreview').style.visibility = 'visible'
+  document.getElementById('divpreview').style.backgroundColor = hex
+  document.body.style.cursor = 'pointer'
 }
 
-function sendHex () {
-  var red = $j('#slider_red').slider('value')
-  var green = $j('#slider_green').slider('value')
-  var blue = $j('#slider_blue').slider('value')
-  var hex = hexFromRGB(red, green, blue)
-  $j.get('/led/hex/' + hex, function () {})
+// function mouseOutMap () {
+//
+// }
+//
+// function clickColor (hex) {
+//
+// }
+
+function decimalToHex (c) {
+  var hex = c.toString(16)
+  return hex.length === 1 ? '0' + hex : hex
 }
 
-(function () {
-  $j('#slider_red, #slider_green, #slider_blue').slider({
-    orientation: 'horizontal',
-    range: 'min',
-    max: 10,
+function rgbToHex (rgb) {
+  var r = rgb['red']
+  var g = rgb['green']
+  var b = rgb['blue']
+  return decimalToHex(r) + decimalToHex(g) + decimalToHex(b)
+}
+
+var rgbColors = {
+  'red': 0,
+  'green': 0,
+  'blue': 0
+}
+
+function createSlider (sliderId, color) {
+  var slider = document.getElementById(sliderId)
+  // Fetch the slider with given id, and create a slider
+  noUiSlider.create(slider, {
+    start: [0],
+    connect: 'lower',
+    tooltips: [ wNumb({decimals: 0}) ],
+    range: {
+      'min': [0],
+      'max': [10]
+    },
     step: 1,
-    value: 0,
-    animate: true,
-    change: sendHex
+    format: wNumb({
+      decimals: 0
+    })
   })
 
-// UI EVENTS
-  $j('#on_off_button').change(function () {
-    $j.get('/button/' + $j(this).is(':checked'), function () {})
+  // Whenever slider values changes it will make POST request to node server
+  slider.noUiSlider.on('slide', function (values, handle) {
+    rgbColors[color] = Math.round(values[handle] * 255 / 10)
+    var url = '/led/hex/' + rgbToHex(rgbColors)
+    $.get(url)
   })
-})()
+}
+
+$(document).ready(function () {
+  var sliders = $('#slider_card .card-body .pmd-range-slider')
+  for (var i in sliders) {
+    if (sliders.hasOwnProperty(i) && !isNaN(i)) {
+      var id = sliders[i].id
+      createSlider(id, id.split('_')[1])
+    }
+  }
+})
