@@ -7,5 +7,6 @@ var envVars = jsonfile.readFileSync(envFile)
 
 module.exports = {
   sub_key: envVars['sub_key'],
-  pub_key: envVars['pub_key']
+  pub_key: envVars['pub_key'],
+  port: 8080
 }
