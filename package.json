@@ -1,5 +1,5 @@
 {
-  "name": "RGB led server",
+  "name": "RGB-led-server",
   "version": "1.0.0",
   "description": "A server which forwards RGB values to Raspberry Pi",
   "main": "server.js",
@@ -9,6 +9,7 @@
   "author": "Nikhil Warke",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "jsonfile": "^3.0.1",
     "pubnub": "^4.13.0"
