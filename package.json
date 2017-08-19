@@ -1,5 +1,5 @@
 {
-  "name": "RGB-led-server",
+  "name": "Rgb-Bulb-node",
   "version": "2.0.0",
   "description": "A server which forwards RGB values to Raspberry Pi",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "author": "Nikhil Warke",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
