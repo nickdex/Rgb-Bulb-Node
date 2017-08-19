@@ -4,7 +4,8 @@
   "description": "A server which forwards RGB values to Raspberry Pi",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Nikhil Warke",
   "license": "ISC",
