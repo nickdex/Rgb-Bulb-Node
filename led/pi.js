@@ -24,6 +24,8 @@ function pubnubUpdate (data) {
   }, function (status, res) {
     if (status.error) {
       console.log(status)
+    } else {
+      console.log('Data Sent: ' + JSON.stringify(data))
     }
   })
 }

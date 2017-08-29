@@ -1,16 +1,24 @@
+var rgbColors = {
+  'red': 0,
+  'green': 0,
+  'blue': 0
+}
+
 function mouseOverColor (hex) {
   document.getElementById('divpreview').style.visibility = 'visible'
   document.getElementById('divpreview').style.backgroundColor = hex
   document.body.style.cursor = 'pointer'
 }
 
-// function mouseOutMap () {
-//
-// }
-//
-// function clickColor (hex) {
-//
-// }
+function mouseOutMap () {
+  document.getElementById('divpreview').style.visibility = 'hidden'
+  document.body.style.cursor = ''
+}
+
+function clickColor (hex) {
+  var url = '/led/hex/' + hex.substr(1)
+  $.get(url)
+}
 
 function decimalToHex (c) {
   var hex = c.toString(16)
@@ -22,12 +30,6 @@ function rgbToHex (rgb) {
   var g = rgb['green']
   var b = rgb['blue']
   return decimalToHex(r) + decimalToHex(g) + decimalToHex(b)
-}
-
-var rgbColors = {
-  'red': 0,
-  'green': 0,
-  'blue': 0
 }
 
 function createSlider (sliderId, color) {
