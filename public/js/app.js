@@ -15,9 +15,14 @@ function mouseOutMap () {
   document.body.style.cursor = ''
 }
 
-function clickColor (hex) {
-  var url = '/led/hex/' + hex.substr(1)
+function sendColor(color) {
+  document.getElementById('led_indicator').style.backgroundColor = color
+  var url = '/led/hex/' + color.substr(1)
   $.get(url)
+}
+
+function clickColor (hex) {
+  sendColor(hex)
 }
 
 function decimalToHex (c) {
@@ -29,7 +34,7 @@ function rgbToHex (rgb) {
   var r = rgb['red']
   var g = rgb['green']
   var b = rgb['blue']
-  return decimalToHex(r) + decimalToHex(g) + decimalToHex(b)
+  return '#' + decimalToHex(r) + decimalToHex(g) + decimalToHex(b)
 }
 
 function createSlider (sliderId, color) {
@@ -52,8 +57,7 @@ function createSlider (sliderId, color) {
   // Whenever slider values changes it will make POST request to node server
   slider.noUiSlider.on('slide', function (values, handle) {
     rgbColors[color] = Math.round(values[handle] * 255 / 10)
-    var url = '/led/hex/' + rgbToHex(rgbColors)
-    $.get(url)
+    sendColor(rgbToHex(rgbColors))
   })
 }
 
