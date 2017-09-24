@@ -14,6 +14,13 @@
                                   supported by Chrome and Opera */
 }
 
+#led_indicator {
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background-color: black;
+}
+
 #selectedcolor {
     border:1px solid #e3e3e3;
     width:80%;
