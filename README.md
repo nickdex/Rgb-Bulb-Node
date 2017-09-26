@@ -1,11 +1,11 @@
 
 # RGB bulb Node Server
 
-A node server which controls and RGB bulb. It is done by using slider for Red, Green and Blue colors respectively.
+A node server which controls and RGB bulb. It is done by using slider for Red, Green and Blue colors respectively, along with a hexagon of colors
 
-## Communicating with Pi
+## Communicating with Pi/Arduino
 
-To send rbg values to Pi, use following schema to send data by PubNub
+To send rbg values to IoT device, use following schema to send data by PubNub
 ```
 {
   type: 'type', // Can be 'rgb' or 'button'
