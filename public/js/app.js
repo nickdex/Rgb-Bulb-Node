@@ -4,17 +4,6 @@ var rgbColors = {
   'blue': 0
 }
 
-function mouseOverColor (hex) {
-  document.getElementById('divpreview').style.visibility = 'visible'
-  document.getElementById('divpreview').style.backgroundColor = hex
-  document.body.style.cursor = 'pointer'
-}
-
-function mouseOutMap () {
-  document.getElementById('divpreview').style.visibility = 'hidden'
-  document.body.style.cursor = ''
-}
-
 function sendColor(color) {
   document.getElementById('led_indicator').style.backgroundColor = color
   var url = '/led/hex/' + color.substr(1)
