@@ -12,6 +12,13 @@ function sendColor(color) {
 
 function clickColor (hex) {
   sendColor(hex)
+  var sliders = $('#slider_card .card-body .pmd-range-slider')
+  for (var i in sliders) {
+    if (sliders.hasOwnProperty(i) && !isNaN(i)) {
+      var slider = sliders[i]
+      slider.noUiSlider.set(0)
+    }
+  }
 }
 
 function decimalToHex (c) {
