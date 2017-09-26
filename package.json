@@ -1,6 +1,6 @@
 {
   "name": "Rgb-Bulb-node",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A server which forwards RGB values to Raspberry Pi",
   "main": "server.js",
   "scripts": {
