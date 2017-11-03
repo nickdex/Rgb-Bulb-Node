@@ -11,6 +11,14 @@ app.use(express.static(publicPath))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
+// DialogFlow Integration with Google Assistant
+app.post('/agent'), function (req, res) {
+  console.log("Request\n");
+  console.log(JSON.stringify(req));
+  console.log("Response\n");
+  console.log(JSON.stringify(res));
+}
+
 app.post('/led/rgb', function (req, res) {
   var rgb = req.body
   console.log(rgb)
