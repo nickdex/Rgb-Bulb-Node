@@ -17,6 +17,7 @@ app.post('/agent'), function (req, res) {
   console.log(JSON.stringify(req));
   console.log("Response\n");
   console.log(JSON.stringify(res));
+  res.send(200)
 }
 
 app.post('/led/rgb', function (req, res) {
