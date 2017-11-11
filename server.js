@@ -14,10 +14,10 @@ app.use(bodyParser.json())
 // DialogFlow Integration with Google Assistant
 app.post('/agent', function (req, res) {
   console.log("Request\n");
-  console.log(JSON.stringify(req));
+  var parameters = req.body.result.parameters
+  console.log(parameters);
   console.log("Response\n");
-  console.log(JSON.stringify(res));
-  res.send(200)
+  res.send({'displayText':`Received ${parameters.color}`})
 })
 
 app.post('/led/rgb', function (req, res) {
